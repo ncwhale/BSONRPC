@@ -1,0 +1,21 @@
+{
+  "name": "bsonrpc",
+  "version": "0.0.1",
+  "description": "Use BSON as simple RPC package to connect other system & language programs.",
+  "main": "service.js",
+  "scripts": {
+    "test": "node test\\index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ncwhale/BSONRPC.git"
+  },
+  "keywords": [
+    "BSON",
+    "RPC"
+  ],
+  "author": "ncwhale",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "730286b7dc779c505aad2ba3f7508603049a825e"
+}
