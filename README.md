@@ -18,21 +18,26 @@ BSONRPC 模块说明
 
 当然，这个协议是如此 *简单* 以至于大家都可以简单的编写一个对应语言的模块出来。
 
+----
+
 Example
 =======
 
 To start a project as a RPC service, just do things below:
 
-1. npm install bsonrpc
-2. create a dir named 'RPC' or something as U wish.
+1. in your project dir, type `npm install bsonrpc` to install this module.
+2. create a dir named 'RPC' or something as U wish. 
+
+    *PS:* if you changed the default directory, you need config this when start service.
+
 3. create a simple model in that dir, such as "Hello, world":
 
         hello = (session, call_id)->
-          session.do_result {
+          session.do_result 
             id: call_id
             result:
               message: "world!"
-          }
+          
         
         module.exports = (method, session) ->
           return (param, call_id) ->
@@ -41,10 +46,9 @@ To start a project as a RPC service, just do things below:
 4. create a simple start script:
 
         rpc = require 'bsonrpc'
-        rpc.run {
+        rpc.run 
           host: '127.0.0.1'
           port: 9527
-        }
 
 5. all done! A BSON-RPC service is created! Now you can use this service like this:
 
@@ -58,5 +62,5 @@ To start a project as a RPC service, just do things below:
 
 
 备注
-=======
+------
 
