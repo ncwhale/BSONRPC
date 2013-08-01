@@ -27,33 +27,33 @@ To start a project as a RPC service, just do things below:
 2. create a dir named 'RPC' or something as U wish.
 3. create a simple model in that dir, such as "Hello, world":
 
-    hello = (session, call_id)->
-      session.do_result {
-        id: call_id
-        result:
-          message: "world!"
-      }
-
-    module.exports = (method, session) ->
-      return (param, call_id) ->
-        hello(session, call_id)
+        hello = (session, call_id)->
+          session.do_result {
+            id: call_id
+            result:
+              message: "world!"
+          }
+        
+        module.exports = (method, session) ->
+          return (param, call_id) ->
+            hello(session, call_id)
 
 4. create a simple start script:
 
-    rpc = require 'bsonrpc'
-    rpc.run {
-      host: '127.0.0.1'
-      port: 9527
-    }
+        rpc = require 'bsonrpc'
+        rpc.run {
+          host: '127.0.0.1'
+          port: 9527
+        }
 
 5. all done! A BSON-RPC service is created! Now you can use this service like this:
 
-    client.connect '127.0.0.1', 9527
-
-    client.on 'result', (result)->
-      log result
-
-    client.call 'hello', null, 0
+        client.connect '127.0.0.1', 9527
+        
+        client.on 'result', (result)->
+          log result
+        
+        client.call 'hello', null, 0
 
 
 
