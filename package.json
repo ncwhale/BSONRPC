@@ -4,7 +4,15 @@
   "description": "Use BSON as simple RPC package to connect other system & language programs.",
   "main": "service.js",
   "scripts": {
-    "test": "node test\\index.js"
+    "test": "node test\\index.js",
+    "build":"coffee -bcm -o ./out/ ./src/",
+    "dev-build":"coffee -bcmw -o ./out/ ./src/"
+  },
+  "dependencies":{
+    "bson": "*"
+  },
+  "devDepencies":{
+    "coffee-script":"*"
   },
   "repository": {
     "type": "git",
@@ -17,5 +25,5 @@
   "author": "ncwhale",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "65a4d6da7c58b8feee4090e7f41f5c6b06e321f6"
+  "gitHead": "6a06329d086bda19268df600a605915c1972fcaf"
 }
